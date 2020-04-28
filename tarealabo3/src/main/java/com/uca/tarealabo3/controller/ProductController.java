@@ -41,19 +41,18 @@ private List<Product> lista = new ArrayList<Product>();
 		int cant = Integer.parseInt(cantidad);
 		int stock = lista.get(producto.getId()).getCantidad();/*EN la lista obtengo el Id, y luego acceder a la cantidad*/
 		ModelAndView mav = new ModelAndView();
-		String si = "Sí se puede comprar la cantidad de este producto";
-		String no = "No se puede comprar la cantidad de este producto, sobrepasa el stock actual";
+		String nombre = lista.get(producto.getId()).getNombre();
 		
 		if(stock > cant )
 		{
-			mav.addObject("resultado", si);
-			mav.setViewName("resultado");
+			mav.addObject("nombre", nombre);
+			mav.setViewName("compra");
 			return mav;
 		}
 		else
 		{
-			mav.addObject("resultado",no);
-			mav.setViewName("resultado");
+			mav.addObject("nombre", nombre);
+			mav.setViewName("error");
 			return mav;
 			/*return lista.get(producto.getId()).getNombre() + "\n" +lista.get(producto.getId()).getCantidad();	*/
 		}
