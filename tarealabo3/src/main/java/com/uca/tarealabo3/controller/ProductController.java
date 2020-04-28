@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.uca.tarealabo3.domain.Product;
 
 @Controller
-public class MainController {
+public class ProductController {
 private List<Product> lista = new ArrayList<Product>();
 	
 	@GetMapping("/comprarProducto")
